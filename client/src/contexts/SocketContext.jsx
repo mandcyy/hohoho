@@ -19,7 +19,7 @@ export function SocketProvider({ children }) {
     const token = localStorage.getItem('token');
 
     // Connect via Vite proxy (ws: true in vite.config.js handles the upgrade)
-  const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:4000';
+  const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:10000';
 const s = io(SOCKET_URL, {
       auth: { token },
       transports: ['websocket', 'polling'],
